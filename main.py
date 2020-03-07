@@ -1,13 +1,18 @@
-from flask import Flask
+from flask import Flask , render_template,url_for,redirect
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
-    return 'hello'
+@app.route("/<text>")
+def hello_world(text = None):
+    if text == None:
 
-@app.route("/name/<text>")
-def name(text):
-    return 'hello ' +text
+        return render_template('index.html',name = 'world')
+    else:
+        # text = text.split(',')
+        # return render_template('index.html', name=text)
+        return redirect(url_for('hello_world'))
+
+
 
 if __name__ == '__main__':
     app.run()

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href = "{{url_for('static',filename = 'style.css')}}">
+    <title>Title</title>
+</head>
+<body>
+{% for i in name%}
+    <p>Hello {{i}}</p>
+
+{%endfor%}
+</body>
+</html>
